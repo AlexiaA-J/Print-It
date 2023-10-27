@@ -27,3 +27,14 @@ arrowLeft.addEventListener("click", () => {
 arrowRight.addEventListener("click", () => {
 	console.log("J'ai clique la fleche droite")
 })
+
+const dots = document.querySelector(".dots");
+
+for(let i = 0; i < slides.length; i++){
+	dots.innerHTML +=
+	'<span id="dot' +
+	i +
+	'" class="dot" title="Image ' +
+	(i + 1) +
+	'"></span>';
+}
