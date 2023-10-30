@@ -17,11 +17,28 @@ const slides = [
 	}
 ]
 
+let currentIndex = 0;
+
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
 const dots = document.querySelector(".dots");
 const bannerImg = document.querySelector(".banner-img");
 const tagLine = document.querySelector("#banner p");
+
+function updateSlider(){
+		// Initialisation de la premiere slide/tag line
+	bannerImg.src = `./assets/images/slideshow/${slides[currentIndex].image}`;
+	tagLine.innerHTML = slides[currentIndex].tagLine;
+
+		//Mise a jour class pour dot selectionne
+	const allDots = document.querySelectorAll('.dot');
+	allDots.forEach((dot, index) => {
+		dot.classList.remove('dot_selected');
+		if (index === currentIndex) {
+		  dot.classList.add('dot_selected');
+		}
+	  });
+}
 
 arrowLeft.addEventListener("click", () => {
 	console.log("J'ai clique la fleche gauche");
@@ -38,12 +55,4 @@ for(let i = 0; i < slides.length; i++){
 	'" class="dot" title="Image ' +
 	(i + 1) +
 	'"></span>';
-}
-
-let dotDisplayed = document.getElementById("dot0");
-	dotDisplayed.classList.add("dot_selected");
-
-	function updateSlider(){
-	bannerImg.src = `./assets/images/slideshow/${slides[0].image}`;
-	tagLine.innerHTML = slides[0].tagLine;
 }
