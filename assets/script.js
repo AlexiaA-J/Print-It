@@ -41,11 +41,20 @@ function updateSlider(){
 }
 
 arrowLeft.addEventListener("click", () => {
-	console.log("J'ai clique la fleche gauche");
-})
+	currentIndex--;
+
+	if(currentIndex < 0){
+		currentIndex = slides.length - 1;
+	}
+	updateSlider();
+});
 
 arrowRight.addEventListener("click", () => {
-	console.log("J'ai clique la fleche droite");
+	currentIndex++;
+	if(currentIndex >= slides.length){
+		currentIndex = 0;
+	}
+	updateSlider();
 })
 
 for(let i = 0; i < slides.length; i++){
