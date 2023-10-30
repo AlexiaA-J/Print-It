@@ -42,3 +42,8 @@ for(let i = 0; i < slides.length; i++){
 
 let dotDisplayed = document.getElementById("dot0");
 	dotDisplayed.classList.add("dot_selected");
+
+	function updateSlider(){
+	bannerImg.src = `./assets/images/slideshow/${slides[0].image}`;
+	tagLine.innerHTML = slides[0].tagLine;
+}
