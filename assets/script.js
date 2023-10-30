@@ -19,16 +19,17 @@ const slides = [
 
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
+const dots = document.querySelector(".dots");
+const bannerImg = document.querySelector(".banner-img");
+const tagLine = document.querySelector("#banner p");
 
 arrowLeft.addEventListener("click", () => {
-	console.log("J'ai clique la fleche gauche")
+	console.log("J'ai clique la fleche gauche");
 })
 
 arrowRight.addEventListener("click", () => {
-	console.log("J'ai clique la fleche droite")
+	console.log("J'ai clique la fleche droite");
 })
-
-const dots = document.querySelector(".dots");
 
 for(let i = 0; i < slides.length; i++){
 	dots.innerHTML +=
@@ -38,3 +39,6 @@ for(let i = 0; i < slides.length; i++){
 	(i + 1) +
 	'"></span>';
 }
+
+let dotDisplayed = document.getElementById("dot0");
+	dotDisplayed.classList.add("dot_selected");
