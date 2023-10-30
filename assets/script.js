@@ -40,23 +40,27 @@ function updateSlider(){
 	  });
 }
 
+	// Fleche gauche
 arrowLeft.addEventListener("click", () => {
 	currentIndex--;
-
+	// Retour a la derniere slide
 	if(currentIndex < 0){
 		currentIndex = slides.length - 1;
 	}
 	updateSlider();
 });
 
+	// Fleche droite
 arrowRight.addEventListener("click", () => {
 	currentIndex++;
+	//Retour a la premiere slide
 	if(currentIndex >= slides.length){
 		currentIndex = 0;
 	}
 	updateSlider();
 })
 
+	//Initialisation du html des dots
 for(let i = 0; i < slides.length; i++){
 	dots.innerHTML +=
 	'<span id="dot' +
